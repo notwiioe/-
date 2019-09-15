@@ -1,0 +1,20 @@
+分割，遍历text，判断有无third。
+
+~~~python
+class Solution(object):
+    def findOcurrences(self, text, first, second):
+        """
+        :type text: str
+        :type first: str
+        :type second: str
+        :rtype: List[str]
+        """
+        text = text.split()
+        sen = []
+        l = len(text)
+        for i in range(l):
+            if i >= l-2:
+                break
+            elif text[i] == first and text[i+1] == second:
+                sen.append(text[i + 2])
+        return sen
